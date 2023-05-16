@@ -77,7 +77,7 @@ while True:
        GPIO.output(led, False)
   pulse_end = time.time()
   pulse_duration = pulse_end - pulse_start   # время между передачей и приемом ультразвуковой волны
-  distance = pulse_duration * 17150          # умножаем это время на 17150 (34300/2) чтобы рассчитать расстояние
+  distance = pulse_duration * 17150          # умножаем это время на 17150 (34300/2), чтобы рассчитать расстояние
   distance = round(distance, 2)               # округляем до двух точек после запятой
   avgDistance = avgDistance + distance
  avgDistance = avgDistance/5
