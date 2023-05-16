@@ -69,16 +69,16 @@ while True:
   time.sleep(0.00001)
   GPIO.output(TRIG, False)                   # устанавливаем на TRIG уровень LOW
 
-  while GPIO.input(ECHO) == 0:                 # проверяем что на ECHO уровень LOW
+  while GPIO.input(ECHO) == 0:               # проверяем что на ECHO уровень LOW
        GPIO.output(led, False)
   pulse_start = time.time()
 
-  while GPIO.input(ECHO) == 1:                 # проверяем что на ECHO уровень HIGH
+  while GPIO.input(ECHO) == 1:               # проверяем что на ECHO уровень HIGH
        GPIO.output(led, False)
   pulse_end = time.time()
   pulse_duration = pulse_end - pulse_start   # время между передачей и приемом ультразвуковой волны
   distance = pulse_duration * 17150          # умножаем это время на 17150 (34300/2), чтобы рассчитать расстояние
-  distance = round(distance, 2)               # округляем до двух точек после запятой
+  distance = round(distance, 2)              # округляем до двух точек после запятой
   avgDistance = avgDistance + distance
  avgDistance = avgDistance/5
  print(avgDistance)
